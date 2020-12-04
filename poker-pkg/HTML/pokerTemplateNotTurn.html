@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <style>
+            * {
+    box-sizing: border-box;
+  }
+  
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+header {
+  background-color: #39393A;
+  padding: 0px;
+  text-align: center;
+  height: 10%;
+  font-size: 25px;
+  color: white;
+}
+nav {
+  float: left;
+  width: 60%;
+  height: 60%;
+  background: #E6E6E6;
+  padding-left: 20px;
+}
+article {
+  float: left;
+  padding-left: 20px;
+  width: 40%;
+  height:60%;
+  background-color: #C6C5B9;
+  border-left: 5px solid #39393A;
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+footer {
+  background-color: #114B5F;
+  padding: 10px;
+  bottom: 0;
+  height: 30%;
+  text-align: center;
+  color: white;
+  border: 5px solid #39393A;
+}  
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+
+
+}
+.button {
+  background-color: #39393A;
+  border: 2px solid black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  width: 90%;
+}
+.button:hover{
+    background-color: grey;
+}
+.button2 {
+  background-color: #39393A;
+  border: 2px solid black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  width: 90%;
+}
+.button2:hover{
+    background-color: crimson;
+}
+.outer{
+  width:100%;
+  text-align: right;
+  float: right;
+}
+.inner:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 32.33%;
+  height: 80%;
+  margin: 1.5% 0.5%;
+  background-color: #C6C5B9;
+  color: #000000;
+}
+.cardColumn{
+  float: left;
+  width: 20%;
+  height: 42%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.moneyEntry{
+  border-radius:4px;
+  background:#ecf0f1;
+  border: black 2px solid;
+  padding: 10px;
+  width: 90%;
+  font-size:2em;
+  margin: 4px 2px;
+  border-radius: 12px;
+}
+.boxed{
+  border:5px; 
+  border-style:solid; 
+  border-color: #39393A; 
+  padding: 1em
+}
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Poker - Texas Hold'em</h1>
+            <script>
+              var source = new EventSource("refresh");
+              source.onmessage = function(event) {
+                location.reload()
+              };
+
+            </script>
+        </header>
+
+        <section>
+            <nav>
+                <h2>Table's Cards</h2>
+                <div class="row">
+                  {% for card in tableCards %}
+                  <div class="cardColumn">
+                    <img src="{{ card }}" alt="card Error" width="100" height="150">
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="row">
+                  {% for card in playerCards %}
+                  <div class="cardColumn">
+                    <img src="{{ card }}" alt="card Error" width="100" height="150">
+                  </div>
+                  {% endfor %}
+                </div>
+            </nav>
+
+            <article>
+                <h2>Players</h2>
+                {% for player, money, colorPlayer in players %}
+                    <p style="color: {{ colorPlayer }};">{{ player }} --- &pound;{{ money[0] }}<p>
+                {% endfor %}
+                <br>
+                <p>You are currently playing on '{{ currentTable }}'</p>
+                <p>{{ currentTable }} is on hand {{ hand }}</p>
+            </article>
+        </section>
+
+        <footer>
+            <div class="row">
+                <div class="column boxed">
+                    <h2>Profile:</h2>
+                    <p>{{ name }}</p>
+                    <p>&pound;{{ money }}</p>
+                </div>
+                <div class="column boxed">
+                  <h3>Last Players Move</h3>
+                  <p>{{ lastEvent }}</p>
+                  <p>Pot: &pound;{{ pot }}</p>
+                </div>
+                <div class="column boxed">
+                    <h3>It is not your turn!</h2>
+                    <p>Please wait for {{ currentPlayer }} to make their move.</p>
+                </div>
+            </div>
+
+        </footer>
+    </body>
+</html>
