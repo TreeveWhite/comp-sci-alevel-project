@@ -13,7 +13,7 @@ To read further dicumentation about the package's modules view the full phinx do
 The program is writen in the Python 3 programming language. You will need a working copy of a python interpretor which is avalaible at https://www.python.org/downloads/. In particular your python version must include the pip module which will be used to dowload othe neccessary requirements (more infomaton below).
 
 The program also needs the PostgreSQL appication to be dowloaded to allow the program to access and create tables in a database. This software is avaliable at https://www.postgresql.org/download/. There is more infomatio under Settu about using this softwar in correlation with the project.
-### Settup
+### Setup
 
 To access this project on your computer you need to clone this repository to your device, this can be achieved by either:
 
@@ -37,9 +37,19 @@ Once you have the requirements, run the database sdk which will initialise the t
 ```bash
 $ cd alevel-project-online-poker
 $ cd poker
-$ py sdk.py
+$ py DDL.py
 ```
 ### Running the Program
+
+Ensure you have installed all the requirements discussed above before running the app using:
+
+```bash
+$ cd alevel-project-online-poker
+$ cd poker
+$ py server.py
+```
+
+Once the program is running your can view the application by navigating to http://localhost:8080/. If your wish for connections to be made with the server from outside our local machine then you will need to redrect this local port through toa public one. (A simple yet basic slution for this is using ngrok).
 
 ## Testing
 
@@ -55,3 +65,7 @@ $ py sdk.py
 ## Documentation
 
 ## License
+
+The package is licensed using the MIT license, see LOCENSE doc for further details.
+
+Author: Treeve G. White
