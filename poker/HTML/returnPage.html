@@ -20,7 +20,7 @@ header {
 nav {
   float: left;
   width: 60%;
-  height: 45%;
+  height: 60%;
   background: #E6E6E6;
   padding-left: 20px;
 }
@@ -28,7 +28,7 @@ article {
   float: left;
   padding-left: 20px;
   width: 40%;
-  height:45%;
+  height:60%;
   background-color: #C6C5B9;
   border-left: 5px solid #39393A;
 }
@@ -41,7 +41,7 @@ footer {
   background-color: #114B5F;
   padding: 10px;
   bottom: 0;
-  height: 45%;
+  height: 30%;
   text-align: center;
   color: white;
   border: 5px solid #39393A;
@@ -51,6 +51,7 @@ footer {
     width: 100%;
     height: auto;
   }
+
 
 }
 .button {
@@ -64,7 +65,7 @@ footer {
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 12px;
-  height: 10%;
+  width: 90%;
 }
 .button:hover{
     background-color: grey;
@@ -78,30 +79,12 @@ footer {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 2% 5%;
+  margin: 4px 2px;
   border-radius: 12px;
   width: 90%;
-  height: 80%;
 }
 .button2:hover{
     background-color: crimson;
-}
-.button3 {
-  background-color: #39393A;
-  border: 2px solid black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2% 5%;
-  border-radius: 12px;
-  width: 90%;
-  height: 80%;
-}
-.button3:hover{
-    background-color: grey;
 }
 .outer{
   width:100%;
@@ -115,10 +98,11 @@ footer {
 }
 .column {
   float: left;
-  width: 48.5%;
+  width: 32.33%;
   height: 80%;
   margin: 1.5% 0.5%;
   background-color: #C6C5B9;
+  color: #000000;
 }
 .cardColumn{
   float: left;
@@ -140,22 +124,12 @@ footer {
   margin: 4px 2px;
   border-radius: 12px;
 }
-.newTableEntry{
-  border-radius:4px;
-  background:#ecf0f1;
-  border: #39393A 1px solid;
-  padding: 8px;
-  width:80%;
-  height: 10%;
-  font-size:1em;
-}
 .boxed{
   border:5px; 
   border-style:solid; 
   border-color: #39393A; 
   padding: 1em
 }
-
 
         </style>
     </head>
@@ -167,57 +141,74 @@ footer {
               source.onmessage = function(event) {
                 location.reload()
               };
-              
-              var startValue = 10;
-
-              var x = setInterval(function() {
-
-                var newValue = startValue --;
-                document.cookie = "key1 = "+newValue;
-                document.getElementById("timerValue").innerHTML = "Time Till Next Hand: " + newValue + "s";
-                if (newValue <= 0){
-                  location.reload()
-                }
-              }, 1000);
-
 
             </script>
         </header>
 
         <section>
             <nav>
-              <h2>Results</h2>
-              <p>The Winner of the hand is Guest239!</p>
-              <h4>Hand Strengths</h4>
-              
-              <p>All other players folded, so had a hand strength of 0.</p>
-              
+                <h2>Table's Cards</h2>
+                <div class="row">
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                  <div class="cardColumn">
+                    <img src="/images/cards/BACK.jpg" alt="card Error" width="100" height="150">
+                  </div>
+                </div>
             </nav>
+
             <article>
-              <h2>Chat Box</h2>
-              
-              <form action="/sendMessage" method="POST">
-                <input type="text" class="newTableEntry" placeholder="enter chat" id="sendChat" name="newChat">
-                <button type="submit" class="button">Send</button>
-              </form>
+                <h2>Players</h2>
+                
+                    <p>Guest823<p>
+                
+                    <p>Guest340<p>
+                
+                <br>
+                <p>You are currently playing on 'test_table'</p>
+                <p>test_table is on hand 2</p>
             </article>
         </section>
 
         <footer>
-          <div class="column boxed" style="color: black; text-align: left;">
-            <h3 style="text-align: center;">Thank you for playing the game we hope you enjoyed!</h3>
-            <h4>Next Steps</h4>
-            <ul>
-              <li>Exit will return you to the main page where you can join another lobby.</li>
-              <li>Or you can wait  for the next hand.</li>
-            </ul>
-            <p id="timerValue"></p>
-          </div>
-          <div class="column boxed">
-            <form action="/exitGame" method="POST">
-                  <button class="button2">Exit</button>
-            </form>
-          </div>
+            <div class="row">
+                <div class="column boxed">
+                    <h2>Profile:</h2>
+                    <p>Guest340</p>
+                    <p>&pound;80</p>
+                </div>
+                <div class="column boxed">
+                  <h3>Last Players Move</h3>
+                  <p>Guest340 has joined the table.</p>
+                </div>
+                <div class="column" style="background-color: #114B5F;">
+                  <form action="/readyUp" method="POST">
+                    <button class="button" >Ready Up</button>
+                  </form>
+                  <form action="/exitGame" method="POST">
+                    <button class="button2">Exit</button>
+                  </form>
+                </div>
+
+            </div>
         </footer>
     </body>
 </html>
