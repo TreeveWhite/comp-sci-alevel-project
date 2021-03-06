@@ -20,22 +20,25 @@ To access this project on your computer you need to clone this repository to you
 1) Clone using the Git userinterface on the website https://github.com/TreeveWhite/alevel-project-online-poker.
 
 2) Clone using commands.
-'''bash
+
+```bash
 $ git clone https://github.com/TreeveWhite/alevel-project-online-poker
-'''
+```
 
 Once you have the project on your local system, install the requirements.
-''' bash
+
+```bash
 $ cd alevel-project-online-poker
 $ py -m pip install -r requiremets.txt
-'''
+```
 
 Once you have the requirements, run the database sdk which will initialise the tables and fill them with the neccessary infomation for the program to be run.
-'''bash
+
+```bash
 $ cd alevel-project-online-poker
 $ cd poker
 $ py sdk.py
-'''
+```
 ### Running the Program
 
 ## Testing
