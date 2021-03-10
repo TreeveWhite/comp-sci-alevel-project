@@ -1,3 +1,9 @@
+"""
+server.py
+=======================================
+
+This 
+"""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from os import curdir, listdir
 from time import sleep
@@ -15,7 +21,6 @@ from gameState.PokerHandler import PokerHandler
 from gameState.PokerMemory import ResponceTypes
 
 PORT = 8080
-#NGROK password: ngrokPassword!
 
 class ServerHandler(BaseHTTPRequestHandler):
 
@@ -385,6 +390,7 @@ class ServerHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 class Server:
+
     def __init__(self, port):
         self.server = ThreadingHTTPServer(("", port), ServerHandler)
         self.server.serve_forever()
