@@ -51,19 +51,6 @@ $ py server.py
 
 Once the program is running your can view the application by navigating to http://localhost:8080/. If your wish for connections to be made with the server from outside our local machine then you will need to redrect this local port through toa public one. (A simple yet basic slution for this is using ngrok).
 
-## Testing
-
-## Logging
-
-## Description
-### The Server
-
-### The Database
-
-### The Poker Logic
-
-## Documentation
-
 ## License
 
 The package is licensed using the MIT license, see LOCENSE doc for further details.
